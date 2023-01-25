@@ -21,6 +21,7 @@ body{
   background-color: white;
   color: black;
   position: sticky;
+  z-index: 3;
 }
 
 .nav > .nav-header {
@@ -36,6 +37,7 @@ body{
   color: black;
   float: right;
   font-size: 18px;
+  z-index: 3;
 }
 
 .nav > .nav-links > a {
@@ -54,6 +56,8 @@ body{
 }
 
 
+
+/* main navbar */
 .navbar1{
   position: fixed;
   top: 0;
@@ -157,6 +161,9 @@ nav:hover{
   width: 45px;
   border-radius: 50%;
 }
+
+
+
 /* banner */
 
 .banner{
@@ -184,6 +191,7 @@ nav:hover{
   width: 160px;
   border-radius: 50%;
   border: 4px solid white;
+  z-index: 0;
 }
 .main-image1{
   position: absolute;
@@ -194,6 +202,7 @@ nav:hover{
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  z-index: 1;
 }
 #small-img2{
   height: 28px;
@@ -571,7 +580,7 @@ color: #475467;
   display: flex;
 }
 .textstylingbox{
-  width: 25%;
+  width: 35%;
   margin: 2px;
   display: flex;
 }
@@ -607,6 +616,10 @@ color: #101828;
 @media screen and (max-width:875px){
   .column5{
     display: inline;
+  }
+  .textstylingbox{
+    width: 40%;
+
   }
 }
 
@@ -690,13 +703,41 @@ color: #101828;
     width: 25px;
     height: 10px;
     border-top: 2px solid #667085;
+    transform-origin: 0% 0%;
+    transition: transform 0.3s ease-in-out;
   }
   .span2{
     display: block;
     width: 15px;
     height: 10px;
     border-top: 2px solid #667085;
+    transition: transform 0.2s ease-in-out;
   }
+  .span3{
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #667085;
+    transform-origin: 0% 0%;
+    transition: transform 0.3s ease-in-out;
+  }
+
+      .nav input[type="checkbox"]:checked ~ .nav-links{
+        transform: translateX(0);
+    }
+
+    .nav input[type="checkbox"]:checked ~ .span1{
+        transform: rotate(45deg);
+    }
+
+    .nav input[type="checkbox"]:checked ~ .span2{
+        transform: scaleY(0);
+    }
+
+    .nav input[type="checkbox"]:checked ~ .hamburger-lines .span3{
+        transform: rotate(-45deg);
+    }
+
   .nav > .nav-links {
     position: absolute;
     padding-top: 1rem;
